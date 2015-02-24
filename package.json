@@ -5,7 +5,7 @@
   },
   "url": "http://github.com/charliewolf/node-cache-manager-memcached",
   "name": "cache-manager-memcached",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Memcached driver for node-cache-manager",
   "main": "index.js",
   "scripts": {
