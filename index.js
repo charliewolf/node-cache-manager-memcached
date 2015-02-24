@@ -28,7 +28,7 @@ function memcachedStore(args) {
         return function(err, result) {
 
             if (err) { return cb(err); }
-            if (opts.parse) {
+            if (opts.parse && result) {
                 result = JSON.parse(result);
             }
             cb(null, result);
