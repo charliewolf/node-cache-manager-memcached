@@ -1,4 +1,7 @@
 var Memcached = require('memcached');
+function noop(){
+
+}
 
 function memcachedStore(args) {
     var self = {};
@@ -8,23 +11,9 @@ function memcachedStore(args) {
     servers = args.servers||[];
     if(servers.length === 0) servers = ['127.0.0.1:11211']
     var pool = new Memcached(servers);
-    function connect(cb) {
-        pool.acquire(function(err, conn) {
-            if (err) {
-                pool.release(conn);
-                return cb(err);
-            }
-
-            if (args.db || args.db === 0) {
-                conn.select(args.db);
-            }
-
-            cb(null, conn);
-        });
-    }
-
     function handleResponse( cb, opts) {
         opts = opts || {};
+        cb = cb || noop;
         return function(err, result) {
 
             if (err) { return cb(err); }
@@ -48,10 +37,7 @@ function memcachedStore(args) {
             options = {};
         }
         options = options || {};
-
         var ttl = (options.ttl || options.ttl === 0) ? options.ttl : ttlDefault;
-
-     
         var val = JSON.stringify(value);
         pool.set(key, val, ttl||0, handleResponse(cb))
 
