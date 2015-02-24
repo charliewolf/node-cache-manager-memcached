@@ -1,0 +1,17 @@
+{
+  "name": "node-cache-manager-memcached",
+  "version": "0.0.1",
+  "description": "Memcached driver for node-cache-manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charlie Wolf",
+  "license": "MIT",
+  "dependencies": {
+    "memcached": "^2.1.0"
+  },
+  "devDependencies": {
+    "cache-manager": "^0.18.0"
+  }
+}
