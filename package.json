@@ -1,5 +1,10 @@
 {
-  "name": "node-cache-manager-memcached",
+  "repository" :
+  { "type" : "git",
+    "url" : "http://github.com/charliewolf/node-cache-manager-memcached.git"
+  },
+  "url": "http://github.com/charliewolf/node-cache-manager-memcached",
+  "name": "cache-manager-memcached",
   "version": "0.0.1",
   "description": "Memcached driver for node-cache-manager",
   "main": "index.js",

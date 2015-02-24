@@ -1,8 +1,3 @@
-/**
- * This is a very basic example of how you can implement your own Redis-based
- * cache store with connection pooling.
- */
-
 var Memcached = require('memcached');
 
 function memcachedStore(args) {
